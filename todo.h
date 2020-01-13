@@ -5,11 +5,11 @@
 
 typedef struct
 {
-    char *description;
+    char description[1000];
     int priority;
     bool completed;
 } Todo;
 
-Todo *create_todo(char *description, int priority);
+Todo *create_todo(char description[], int priority);
 
 #endif

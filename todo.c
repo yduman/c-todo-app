@@ -6,11 +6,11 @@
 #include "todo.h"
 #include "vector.h"
 
-Todo *create_todo(char *description, int priority)
+Todo *create_todo(char description[], int priority)
 {
     Todo *todo = malloc(sizeof(Todo));
     todo->completed = false;
-    todo->description = description;
+    strcpy(todo->description, description);
     todo->priority = priority;
 
     return todo;

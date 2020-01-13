@@ -10,8 +10,6 @@ int main(int argc, char const *argv[])
     printf("---- TODO APPLICATION ----");
 
     Vector *todo_list = vector_init(0);
-    int todo_priority;
-    char todo_description[1000];
     char *nptr;
     char cmd = ' ';
     // Todo *new_todo;
@@ -32,6 +30,10 @@ int main(int argc, char const *argv[])
         {
         case 'a':
             printf("Please provide a description: ");
+
+            char todo_description[1000];
+            int todo_priority;
+
             if (fgets(todo_description, sizeof(todo_description), stdin) != NULL)
             {
                 nptr = strchr(todo_description, '\n');
@@ -43,9 +45,9 @@ int main(int argc, char const *argv[])
 
             do
             {
-                printf("Please provide a priority (0-99): ");
+                printf("Please provide a priority (0-10): ");
                 scanf("%d", &todo_priority);
-            } while (!(todo_priority >= 0 && todo_priority <= 99));
+            } while (!(todo_priority >= 0 && todo_priority <= 10));
 
             while (getchar() != '\n')
                 ;
@@ -54,7 +56,6 @@ int main(int argc, char const *argv[])
             vector_add(todo_list, new_todo);
 
             printf("Added todo '%s'\n", todo_description);
-
             break;
         case 'p':
             printf("\n\nYour todos: \n");
