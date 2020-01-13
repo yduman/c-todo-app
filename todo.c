@@ -97,8 +97,8 @@ bool delete_todo_by_description(char description[], Vector *todo_list)
     for (int i = 0; i < todo_list->size; ++i)
     {
         Todo t = todo_list->data[i];
-        int is_equal = strcmp(t.description, description);
-        if (!is_equal)
+        int compare_result = strcmp(t.description, description);
+        if (compare_result == 0)
         {
             result = vector_delete(todo_list, i);
         }
