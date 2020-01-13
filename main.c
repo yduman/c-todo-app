@@ -12,7 +12,6 @@ int main(int argc, char const *argv[])
     Vector *todo_list = vector_init(0);
     char *nptr;
     char cmd = ' ';
-    // Todo *new_todo;
 
     do
     {
